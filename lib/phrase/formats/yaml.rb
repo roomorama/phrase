@@ -4,7 +4,7 @@ module Phrase
   module Formats
     class Yaml < Phrase::Formats::Base
       def self.filename_for_locale(locale)
-        "phrase.#{locale.name}.yml"
+        "#{locale.name}.yml"
       end
       
       def self.locale_aware?
