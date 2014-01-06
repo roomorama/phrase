@@ -14,7 +14,7 @@ module Phrase::Tool::Commands
         format: nil,
         locale_filename: nil,
         locale_directory: nil,
-        target_directory: nil 
+        target_directory: nil
       },
       push: {
         tags: [],
@@ -27,7 +27,9 @@ module Phrase::Tool::Commands
       pull: {
         format: nil,
         target: nil,
-        tag: nil
+        tag: nil,
+        updated_since: nil,
+        include_empty_translations: nil
       },
       tags: {
         list: true

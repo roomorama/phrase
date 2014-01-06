@@ -2,9 +2,9 @@
 
 module Phrase
   module Formats
-    class SimpleJson < Phrase::Formats::Base
+    class NodeJson < Phrase::Formats::Base
       def self.filename_for_locale(locale)
-        "phrase.#{locale.name}.json"
+        "#{locale.name}.js"
       end
 
       def self.locale_aware?
@@ -12,7 +12,11 @@ module Phrase
       end
 
       def self.extensions
-        [:json]
+        [:js]
+      end
+
+      def self.target_directory
+        'locales/'
       end
     end
   end

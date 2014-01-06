@@ -12,7 +12,7 @@ class Phrase::Tool
   autoload :TagValidator, 'phrase/tool/tag_validator'
   autoload :EncodingDetector, 'phrase/tool/encoding_detector'
   autoload :Locale, 'phrase/tool/locale'
-  
+
   def initialize(argv)
     @args = argv
   end
@@ -20,7 +20,7 @@ class Phrase::Tool
   def run
     command_name = @args.first
     @options = Phrase::Tool::Options.new(@args, command_name)
-    
+
     command = case command_name
       when /init/
         Phrase::Tool::Commands::Init.new(@options, @args)
@@ -38,5 +38,9 @@ class Phrase::Tool
         end
     end
     command.execute!
+  end
+
+  def self.config
+    @@config_instance ||= Phrase::Tool::Config.new.load
   end
 end
