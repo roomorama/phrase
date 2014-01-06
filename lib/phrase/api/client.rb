@@ -237,6 +237,7 @@ private
     client.use_ssl = true if Phrase::Api::Config.api_use_ssl?
     client.verify_mode = OpenSSL::SSL::VERIFY_NONE if Phrase::Api::Config.skip_ssl_validation?
     client.ca_file = File.join(File.dirname(__FILE__), "..", "..", "..", "cacert.pem")
+    client.read_timeout = 500
     client
   end
 
